@@ -12,10 +12,14 @@
             background-color: #1a202c;
             color: #e2e8f0;
         }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
         header {
             background-color: #2d3748;
             padding: 2rem 0;
-            text-align: center;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
         h1 {
@@ -23,30 +27,27 @@
             color: #63b3ed;
             margin: 0;
         }
+        h2 {
+            color: #63b3ed;
+            margin-top: 2rem;
+        }
         p {
             font-size: 1.25rem;
             color: #a0aec0;
-        }
-        main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+            margin-top: 0.5rem;
         }
         .svg-container {
             width: 100%;
             max-width: 800px;
-            margin: 0 auto;
             background-color: #2d3748;
             padding: 2rem;
             border-radius: 8px;
-        }
-        .contact-section {
-            margin-top: 3rem;
+            margin: 2rem 0;
         }
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 1rem;
             margin-top: 1rem;
         }
         .contact-item {
@@ -60,15 +61,15 @@
             fill: none;
             stroke: #63b3ed;
         }
-        .obscured {
-            cursor: pointer;
-        }
         footer {
             background-color: #2d3748;
             color: #a0aec0;
             text-align: center;
             padding: 1rem 0;
             margin-top: 2rem;
+        }
+        .obscured {
+            cursor: pointer;
         }
     </style>
 </head>

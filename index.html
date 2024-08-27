@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path Integral - Tech Consultancy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        header {
+            background-color: #2d3748;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        h1 {
+            font-size: 3rem;
+            color: #63b3ed;
+            margin: 0;
+        }
+        p {
+            font-size: 1.25rem;
+            color: #a0aec0;
+        }
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .svg-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #2d3748;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        .contact-section {
+            margin-top: 3rem;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+        .contact-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 1rem;
+            fill: none;
+            stroke: #63b3ed;
+        }
+        .obscured {
+            cursor: pointer;
+        }
+        footer {
+            background-color: #2d3748;
+            color: #a0aec0;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Path Integral</h1>
+    </header>
+
+    <main>
+        <div class="svg-container">
+            <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                <rect width="100%" height="100%" fill="#1a202c"/>
+                <path d="M0 200 Q 200 100, 400 200 T 800 200" stroke="#4299e1" fill="none" stroke-width="2"/>
+                <path d="M0 200 Q 200 300, 400 200 T 800 200" stroke="#4299e1" fill="none" stroke-width="2"/>
+                <path d="M0 200 Q 200 150, 400 200 T 800 200" stroke="#63b3ed" fill="none" stroke-width="3"/>
+                <path d="M0 200 Q 200 250, 400 200 T 800 200" stroke="#63b3ed" fill="none" stroke-width="3"/>
+                <line x1="400" y1="0" x2="400" y2="400" stroke="#f6ad55" stroke-width="2"/>
+                <text x="410" y="20" fill="#f6ad55" font-size="14">Progress together</text>
+            </svg>
+        </div>
+
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <span id="email" class="obscured" data-name="736970646e" data-domain="70617468696e74656772616c2e636f6d">Click to reveal email</span>
+                </div>
+            
+                <script>
+                    function decodeEmail(encoded) {
+                        return encoded.replace(/[a-zA-Z0-9]+/g, function(match) {
+                            return String.fromCharCode(parseInt(match, 16));
+                        });
+                    }
+            
+                    document.getElementById('email').addEventListener('click', function() {
+                        const name = decodeEmail(this.getAttribute('data-name'));
+                        const domain = decodeEmail(this.getAttribute('data-domain'));
+                        this.textContent = name + '@' + domain;
+                        this.classList.remove('obscured');
+                        this.style.cursor = 'default';
+                    });
+                </script>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                    <span>@pathintegral</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Path Integral. All rights reserved.</p>
+    </footer>
+</body>
+</html>

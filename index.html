@@ -139,22 +139,22 @@
                     <svg class="contact-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                     </svg>
-                    <span id="email" class="obscured" data-name="736970646e" data-domain="70617468696e74656772616c2e636f6d">Click to reveal email</span>
+                    <span id="email" data-encoded="73696d6f6e4070617468696e74656772616c2e636f6d">Loading...</span>
                 </div>
             
                 <script>
                     function decodeEmail(encoded) {
-                        return encoded.replace(/[a-zA-Z0-9]+/g, function(match) {
-                            return String.fromCharCode(parseInt(match, 16));
-                        });
+                        let decoded = '';
+                        for (let i = 0; i < encoded.length; i += 2) {
+                            decoded += String.fromCharCode(parseInt(encoded.substr(i, 2), 16));
+                        }
+                        return decoded;
                     }
             
-                    document.getElementById('email').addEventListener('click', function() {
-                        const name = decodeEmail(this.getAttribute('data-name'));
-                        const domain = decodeEmail(this.getAttribute('data-domain'));
-                        this.textContent = name + '@' + domain;
-                        this.classList.remove('obscured');
-                        this.style.cursor = 'default';
+                    window.addEventListener('DOMContentLoaded', (event) => {
+                        const emailElement = document.getElementById('email');
+                        const encodedEmail = emailElement.getAttribute('data-encoded');
+                        emailElement.textContent = decodeEmail(encodedEmail);
                     });
                 </script>
                 <div class="contact-item">
